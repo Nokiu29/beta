@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Прозрачный Header с видео-фоном и логотипом</title>
+</head>
+<body>
+    <header class="transparent-header">
+        <div class="mobile-menu-button">
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="left-menu">
+            <ul>
+                <li><a href="#">Пункт 1</a></li>
+                <li><a href="#">Пункт 2</a></li>
+            </ul>
+        </div>
+        <div class="logo">
+            <img src="https://convart.digital/wp-content/uploads/2023/04/convart-logo-white-1.svg" alt="Логотип">
+        </div>
+        <div class="right-menu">
+            <ul>
+                <button class="button button1">Консультация</button>
+            </ul>
+        </div>
+    </header>
+    <div class="video-container">
+        <video autoplay muted loop id="video-background">
+            <source src="video/179707_Texture Red Floating Lights_By_Tzur_Livne_Artlist_HD.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-text">
+            <h2>Создаем <r style="color: brown;">эффективные</r></h2>
+            <h2>сайты для вашего бизнеса</h2>
+            <p>Мы — агентство веб-дизайна, ориентированное на <br>процессы, которые помогут вашему бизнесу<br> процветать</p>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-xl-2 col-md-4 col-6">
+                    <div class="icon-box">
+                        <h3><a href="#">70+</a></h3>
+                        <p>успешных проектов</p>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-4 col-6">
+                    <div class="icon-box">
+                        <h3><a href="#">6</a></h3>
+                        <p>лет опыта</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-block">
+        <p>Содержимое вашего блока с белым фоном.</p>
+    </div>
+    <div class="mobile-menu">
+        <button class="close-button">&times;</button>
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </div>
+    <script src="js/javasc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
