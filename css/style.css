@@ -192,9 +192,16 @@ body {
 .mobile-menu-button.active .bar:nth-child(1) {
     transform: rotate(-45deg) translate(5px, -5px);
 }
-.transparent-header.hide {
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
+/* Стиль для скрытия заголовка при прокрутке вниз */
+
+.transparent-header.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Черный фон */
+    z-index: 2;
+    transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {
