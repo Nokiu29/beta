@@ -1,37 +1,40 @@
 const menuButton = document.querySelector('.menu-icon');
 const mobileMenu = document.querySelector('.mobile-menu');
 const closeButton = document.querySelector('.close-button');
-const body = document.querySelector('body');
 
 menuButton.addEventListener('click', function () {
     mobileMenu.style.left = '0'; // Открываем боковую панель
-    body.classList.add('menu-open'); // Запрещаем прокрутку страницы
 });
 
 closeButton.addEventListener('click', function () {
     mobileMenu.style.left = '-250px'; // Закрываем боковую панель
-    body.classList.remove('menu-open'); // Разрешаем прокрутку страницы
 });
-// Выбираем элемент заголовка
+// Получаем элемент заголовка
 const header = document.querySelector('.transparent-header');
 
-let lastScrollPosition = 0;
+// Переменная для отслеживания текущей позиции прокрутки
+let lastScrollTop = 0;
 
-// Обработчик события прокрутки
-window.addEventListener('scroll', function () {
-    // Текущая позиция прокрутки страницы
-    const currentScrollPosition = window.scrollY;
+// Функция для обработки прокрутки страницы
+function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Если текущая позиция прокрутки больше предыдущей, это значит, что страница прокручивается вниз
-    if (currentScrollPosition > lastScrollPosition) {
-        // Скрываем заголовок
-        header.classList.add('hide');
+    // Проверяем, двигается ли пользователь вниз или вверх
+    if (scrollTop > lastScrollTop) {
+        // Пользователь двигается вниз - скрываем заголовок
+        header.classList.remove('top'); // Удаляем класс 'top'
     } else {
-        // Показываем заголовок
-        header.classList.remove('hide');
+        // Пользователь двигается вверх - отображаем заголовок
+        header.classList.add('top'); // Добавляем класс 'top'
     }
 
-    // Обновляем позицию прокрутки
-    lastScrollPosition = currentScrollPosition;
-});
+    // Если пользователь прокрутил вверх до верхней части страницы, убираем класс 'top' для прозрачности фона
+    if (scrollTop === 0) {
+        header.classList.remove('top');
+    }
 
+    lastScrollTop = scrollTop;
+}
+
+// Добавляем обработчик прокрутки
+window.addEventListener('scroll', handleScroll);
